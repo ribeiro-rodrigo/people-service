@@ -34,6 +34,21 @@ components:
 
 paths:
   /people:
+    post:
+      operationId: resources.people.create
+      tags:
+        - people
+      summary: Create a person and add it to the people list
+      description: Create a new person in the people list
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/People'
+      responses:
+        201:
+          description: Created
     get:
       operationId: resources.people.read_all
       tags:
@@ -61,27 +76,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/PeopleList'
 
-    post:
-      operationId: people.create
-      tags:
-        - people
-      summary: Create a person and add it to the people list
-      description: Create a new person in the people list
-      parameters:
-        - name: person
-          in: body
-          description: Person to create
-          required: True
-          schema:
-            type: object
-            required:
-              - fname
-              - lname
-            properties:
-              fname:
-                type: string
-                description: Frist name of person to create
-              lname:
-                type: string
-                description: Last name of person to create
+
+
+
 
