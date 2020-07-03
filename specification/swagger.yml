@@ -60,3 +60,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PeopleList'
+
+    post:
+      operationId: people.create
+      tags:
+        - people
+      summary: Create a person and add it to the people list
+      description: Create a new person in the people list
