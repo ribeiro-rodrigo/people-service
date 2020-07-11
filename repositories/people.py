@@ -24,3 +24,4 @@ def find_all(offset: int = 0, limit=None) -> list:
 
     return people_list[offset:limit]
 
+

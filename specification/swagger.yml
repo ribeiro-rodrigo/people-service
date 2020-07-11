@@ -10,7 +10,7 @@ servers:
 
 components:
   schemas:
-    People:
+    Person:
       type: object
       required:
         - fname
@@ -71,7 +71,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/People'
+              $ref: '#/components/schemas/Person'
       responses:
         201:
           description: Created
