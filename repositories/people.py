@@ -36,23 +36,23 @@ def find_by_id(id: str) -> dict:
 
 
 def insert(person: map):
-    if person['lname'] in PEOPLE:
-        raise Exception('person already exists')
 
-    PEOPLE[person['lname']] = {
+    id = generate_id()
+
+    PEOPLE[id] = {
         "lname": person['lname'],
         "fname": person["fname"]
     }
 
 
-def remove(lname: str):
-    PEOPLE.pop(lname, None)
+def remove(id: str):
+    PEOPLE.pop(id, None)
 
 
 def update(person: dict) -> bool:
-    if find_by_lname(person['lname']):
+    if find_by_id(person['id']):
         PEOPLE.update({
-            person['lname']: {
+            person[person['id']]: {
                 "lname": person["lname"],
                 "fname": person["fname"]
             }
