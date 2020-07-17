@@ -14,13 +14,13 @@ def find_all():
     return people_list
 
 
-def find_by_lname(lname):
-    person = people.find_by_lname(lname)
+def find_one(id: str):
+    person = people.find_by_id(id)
 
     if person:
         return person
     else:
-        abort(404, "Person with last name {lname} not found".format(lname=lname))
+        abort(404, "Person with last name {id} not found".format(id=id))
 
 
 def create(person: map):
@@ -37,7 +37,8 @@ def create(person: map):
         )
 
 
-def update(lname, person):
+def update(id: str, person: map):
+    person['id'] = id
     is_update = people.update(person)
     if is_update:
         return make_response("Person {lname} is updated".format(lname=person['lname']), 200)
@@ -45,7 +46,7 @@ def update(lname, person):
         abort(404, "Person with last name {lname} not found".format(lname=person['lname']))
 
 
-def remove(lname: str):
-    people.remove(lname)
-    return make_response("{lname} successfully removed".format(lname=lname), 200)
+def remove(id: str):
+    people.remove(id)
+    return make_response("{id} successfully removed".format(id=id), 200)
 
