@@ -67,3 +67,21 @@ paths:
         - people
       summary: Create a person and add it to the people list
       description: Create a new person in the people list
+      parameters:
+        - name: person
+          in: body
+          description: Person to create
+          required: True
+          schema:
+            type: object
+            required:
+              - fname
+              - lname
+            properties:
+              fname:
+                type: string
+                description: Frist name of person to create
+              lname:
+                type: string
+                description: Last name of person to create
+
