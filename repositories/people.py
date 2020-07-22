@@ -1,15 +1,15 @@
 import uuid
 
 PEOPLE: map = {
-    "Joao": {
+    "852b198ce56e11ea8c1228565aff1763": {
         "fname": "Joao",
         "lname": "Silva"
     },
-    "Maria": {
+    "952b1583236e11ea8c1228565a4f1743": {
         "fname": "Maria",
         "lname": "Santos"
     },
-    "Jose": {
+    "454b168ced6e41ea6c1228565aff1768": {
         "fname": "Jose",
         "lname": "Carvalho"
     }
@@ -31,8 +31,8 @@ def find_all(offset: int = 0, limit=None) -> list:
     return people_list[offset:limit]
 
 
-def find_by_lname(lname: str) -> dict:
-    return PEOPLE.get(lname, None)
+def find_by_id(id: str) -> dict:
+    return PEOPLE.get(id, None)
 
 
 def insert(person: map):
