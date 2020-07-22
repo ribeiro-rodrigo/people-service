@@ -1,3 +1,5 @@
+import uuid
+
 PEOPLE: map = {
     "Joao": {
         "fname": "Joao",
@@ -12,6 +14,10 @@ PEOPLE: map = {
         "lname": "Carvalho"
     }
 }
+
+
+def generate_id():
+    return uuid.uuid4().hex
 
 
 def find_all(offset: int = 0, limit=None) -> list:
