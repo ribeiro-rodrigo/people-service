@@ -2,7 +2,7 @@ from flask import request, make_response, abort
 from repositories import people
 
 
-def read_all():
+def find_all():
     offset = request.args.get('offset', None)
     limit = request.args.get('limit', None)
 

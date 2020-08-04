@@ -35,7 +35,7 @@ components:
 paths:
   /people:
     get:
-      operationId: resources.people.read_all
+      operationId: resources.people.find_all
       tags:
         - people
       summary: The people data structure supported by the server application
