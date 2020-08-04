@@ -35,7 +35,7 @@ definitions:
 paths:
   /people:
     get:
-      operationId: "people.read_all"
+      operationId: "resources.people.read_all"
       tags:
         - "people"
       summary: "The people data structure supported by the server application"
