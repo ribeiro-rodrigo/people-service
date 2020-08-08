@@ -25,3 +25,13 @@ def find_all(offset: int = 0, limit=None) -> list:
     return people_list[offset:limit]
 
 
+def insert(person: map):
+    if person['lname'] in PEOPLE:
+        raise Exception('person already exists')
+
+    PEOPLE[person['lname']] = {
+        "lname": person['lname'],
+        "fname": person["fname"]
+    }
+
+
