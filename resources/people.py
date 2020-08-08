@@ -1,4 +1,4 @@
-from flask import request
+from flask import request, make_response, abort
 from repositories import people
 
 
@@ -14,6 +14,13 @@ def read_all():
     return people_list
 
 
-def create():
-    pass
+def create(person: map):
+    try:
+        people.insert(person)
+        return make_response("{lname} successfully created".format(lname=person['lname']), 201)
+    except Exception:
+        abort(
+            406,
+            "Person with last name {lname} already exists".format(lname=person['lname'])
+        )
 
