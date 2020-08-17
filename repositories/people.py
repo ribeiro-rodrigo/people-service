@@ -41,3 +41,19 @@ def insert(person: map):
 
 def remove(lname: str):
     PEOPLE.pop(lname, None)
+
+
+def update(person: dict) -> bool:
+    if find_by_lname(person['lname']):
+        PEOPLE.update({
+            person['lname']: {
+                "lname": person["lname"],
+                "fname": person["fname"]
+            }
+        })
+        return True
+    else:
+        return False
+
+
+
