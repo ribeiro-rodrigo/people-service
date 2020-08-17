@@ -37,6 +37,14 @@ def create(person: map):
         )
 
 
+def update(person):
+    is_update = people.update(person)
+    if is_update:
+        return make_response("Person {lname} is updated".format(lname=person['lname']), 200)
+    else:
+        abort(404, "Person with last name {lname} not found".format(lname=person['lname']))
+
+
 def remove(lname: str):
     people.remove(lname)
     return make_response("{lname} successfully removed".format(lname=lname), 200)
