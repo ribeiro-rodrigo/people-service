@@ -31,3 +31,4 @@ def create(person: map):
 def remove(lname: str):
     people.remove(lname)
     return make_response("{lname} successfully removed".format(lname=lname), 200)
+
