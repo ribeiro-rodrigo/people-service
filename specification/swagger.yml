@@ -85,6 +85,26 @@ paths:
               schema:
                 type: string
               description: Resource Location
+  /people/{lname}:
+    delete:
+      operationId: resources.people.remove
+      tags:
+        - people
+      summary: Delete a person from the people list
+      description: Delete a person
+      parameters:
+        - name: lname
+          in: path
+          schema:
+            type: string
+          required: True
+      responses:
+        200:
+          description: Successfully deleted a person from people list
+          content:
+            text/plain:
+              schema:
+                type: string
 
 
 
