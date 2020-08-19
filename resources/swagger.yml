@@ -23,3 +23,11 @@ definitions:
       lname:
         type: string
         description: Last name of person to create
+  PeopleList:
+    type: array
+    items:
+      properties:
+        fname:
+          type: string
+        lname:
+          type: string
