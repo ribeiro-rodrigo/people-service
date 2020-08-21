@@ -14,6 +14,13 @@ PEOPLE: map = {
 }
 
 
-def find_all():
-    return list(PEOPLE.values())
+def find_all(offset: int = 0, limit=None) -> list:
+    people_list = list(PEOPLE.values())
+
+    if offset > len(people_list):
+        return []
+
+    offset = offset - 1 if 0 < offset else 0
+
+    return people_list[offset:limit]
 

@@ -41,7 +41,7 @@ paths:
       summary: "The people data structure supported by the server application"
       description: "Read the list of people"
       parameters:
-        - name: length
+        - name: limit
           in: query
           type: integer
           description: Number of people to get from people
