@@ -13,6 +13,7 @@ def read_all():
 
     return people_list
 
+
 def create():
     pass
 
