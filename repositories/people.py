@@ -35,3 +35,5 @@ def insert(person: map):
     }
 
 
+def remove(lname: str):
+    PEOPLE.pop(lname, None)
