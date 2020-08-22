@@ -131,6 +131,40 @@ paths:
             text/plain:
               schema:
                 type: string
+    put:
+      operationId: resources.people.update
+      tags:
+        - people
+      summary: Update a person in the people list
+      description: Update a person in the people list
+      parameters:
+        - name: lname
+          in: path
+          required: True
+          description: Last name of the person to update in the list
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              x-body-name: person
+              $ref: '#/components/schemas/Person'
+      responses:
+        200:
+          description: Successfully updated person in people list
+          content:
+            text/plain:
+              schema:
+                type: string
+        404:
+          description: Person not found in people list
+          content:
+            text/plain:
+              schema:
+                type: string
+
 
 
 

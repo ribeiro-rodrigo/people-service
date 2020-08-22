@@ -37,7 +37,7 @@ def create(person: map):
         )
 
 
-def update(person):
+def update(lname, person):
     is_update = people.update(person)
     if is_update:
         return make_response("Person {lname} is updated".format(lname=person['lname']), 200)
