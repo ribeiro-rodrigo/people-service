@@ -27,3 +27,7 @@ def create(person: map):
             "Person with last name {lname} already exists".format(lname=person['lname'])
         )
 
+
+def remove(lname: str):
+    people.remove(lname)
+    return make_response("{lname} successfully removed".format(lname=lname), 200)
