@@ -16,9 +16,12 @@ def read_all():
 
 def create(person: map):
     try:
+
         people.insert(person)
-        return make_response("{lname} successfully created".format(lname=person['lname']), 201)
-    except Exception:
+        headers = {"Location": f"{person['lname']}"}
+        return make_response("{lname} successfully created".format(lname=person['lname']), 201, headers)
+
+    except:
         abort(
             406,
             "Person with last name {lname} already exists".format(lname=person['lname'])
