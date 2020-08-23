@@ -14,6 +14,15 @@ def find_all():
     return people_list
 
 
+def find_by_lname(lname):
+    person = people.find_by_lname(lname)
+
+    if person:
+        return person
+    else:
+        abort(404, "Person with last name {lname} not found".format(lname=lname))
+
+
 def create(person: map):
     try:
 
