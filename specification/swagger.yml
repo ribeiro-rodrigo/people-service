@@ -75,7 +75,16 @@ paths:
               $ref: '#/components/schemas/Person'
       responses:
         201:
-          description: Created
+          description: Person Created
+          content:
+            text/plain:
+              schema:
+                type: string
+          headers:
+            Location:
+              schema:
+                type: string
+              description: Resource Location
 
 
 
