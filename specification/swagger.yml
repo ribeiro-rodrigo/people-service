@@ -105,6 +105,32 @@ paths:
             text/plain:
               schema:
                 type: string
+    get:
+      operationId: resources.people.find_by_lname
+      tags:
+        - people
+      summary: Read one person from the people list
+      description: Read one person from the people list
+      parameters:
+        - name: lname
+          in: path
+          required: True
+          description: last name of the person to get from the list
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successfully read person from people list operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Person"
+        404:
+          description: Person not found
+          content:
+            text/plain:
+              schema:
+                type: string
 
 
 
