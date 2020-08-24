@@ -38,28 +38,31 @@ def find_by_id(id: str) -> dict:
     return PEOPLE.get(id, None)
 
 
-def insert(person: map):
+def insert(person: map) -> map:
 
     id = generate_id()
 
-    PEOPLE[id] = {
+    person_inserted = {
         "lname": person['lname'],
-        "fname": person["fname"]
+        "fname": person["fname"],
+        "id": id
     }
+
+    PEOPLE[id] = person_inserted
+
+    return person_inserted
 
 
 def remove(id: str):
     PEOPLE.pop(id, None)
 
 
-def update(person: dict) -> bool:
-    if find_by_id(person['id']):
-        PEOPLE.update({
-            person[person['id']]: {
-                "lname": person["lname"],
-                "fname": person["fname"]
-            }
-        })
+def update(id: str, person: dict) -> bool:
+
+    person_inserted = find_by_id(id)
+
+    if person_inserted:
+        person_inserted.update({"lname": person["lname"], "fname": person["fname"]})
         return True
     else:
         return False

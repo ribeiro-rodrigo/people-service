@@ -26,8 +26,8 @@ def find_one(id: str):
 def create(person: map):
     try:
 
-        people.insert(person)
-        headers = {"Location": f"{person['lname']}"}
+        person_inserted = people.insert(person)
+        headers = {"Location": f"{person_inserted['id']}"}
         return make_response("{lname} successfully created".format(lname=person['lname']), 201, headers)
 
     except:
@@ -38,8 +38,7 @@ def create(person: map):
 
 
 def update(id: str, person: map):
-    person['id'] = id
-    is_update = people.update(person)
+    is_update = people.update(id, person)
     if is_update:
         return make_response("Person {lname} is updated".format(lname=person['lname']), 200)
     else:
