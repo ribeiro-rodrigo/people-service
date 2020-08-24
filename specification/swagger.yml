@@ -117,7 +117,7 @@ paths:
       summary: Read one person from the people list
       description: Read one person from the people list
       parameters:
-        - name: lname
+        - name: id
           in: path
           required: True
           description: last name of the person to get from the list
@@ -143,7 +143,7 @@ paths:
       summary: Update a person in the people list
       description: Update a person in the people list
       parameters:
-        - name: lname
+        - name: id
           in: path
           required: True
           description: Last name of the person to update in the list
