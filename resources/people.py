@@ -24,17 +24,9 @@ def find_one(id: str):
 
 
 def create(person: map):
-    try:
-
-        person_inserted = people.insert(person)
-        headers = {"Location": f"{person_inserted['id']}"}
-        return make_response("{lname} successfully created".format(lname=person['lname']), 201, headers)
-
-    except:
-        abort(
-            406,
-            "Person with last name {lname} already exists".format(lname=person['lname'])
-        )
+    person_inserted = people.insert(person)
+    headers = {"Location": f"{person_inserted['id']}"}
+    return make_response("{lname} successfully created".format(lname=person['lname']), 201, headers)
 
 
 def update(id: str, person: map):
