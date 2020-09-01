@@ -26,7 +26,11 @@ def find_one(id: str):
 def create(person: map):
     person_inserted = people.insert(person)
     headers = {"Location": f"{request.path}/{person_inserted['id']}"}
-    return make_response("{lname} successfully created".format(lname=person['lname']), 201, headers)
+    return make_response(
+        "{lname} successfully created".format(lname=person['lname']),
+        201,
+        headers
+    )
 
 
 def update(id: str, person: map):
