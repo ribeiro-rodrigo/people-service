@@ -23,21 +23,6 @@ def generate_id():
     return uuid.uuid4().hex
 
 
-def find_all(offset: int = 0, limit=None) -> list:
-    people_list = list(PEOPLE.values())
-
-    if offset > len(people_list):
-        return []
-
-    offset = offset - 1 if 0 < offset else 0
-
-    return people_list[offset:limit]
-
-
-def find_by_id(id: str) -> dict:
-    return PEOPLE.get(id, None)
-
-
 def insert(person: map) -> map:
 
     id = generate_id()
@@ -51,6 +36,21 @@ def insert(person: map) -> map:
     PEOPLE[id] = person_inserted
 
     return person_inserted
+
+
+def find_all(offset: int = 0, limit=None) -> list:
+    people_list = list(PEOPLE.values())
+
+    if offset > len(people_list):
+        return []
+
+    offset = offset - 1 if 0 < offset else 0
+
+    return people_list[offset:limit]
+
+
+def find_by_id(id: str) -> dict:
+    return PEOPLE.get(id, None)
 
 
 def remove(id: str):
