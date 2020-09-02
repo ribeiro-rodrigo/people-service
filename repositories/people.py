@@ -1,10 +1,10 @@
 import uuid
 
 PEOPLE: map = {
-    "852b198ce56e11ea8c1228565aff1763": {
+    "852b198ce56e11ea8c1228565aff1764": {
         "fname": "Joao",
         "lname": "Silva",
-        "id": "852b198ce56e11ea8c1228565aff1763"
+        "id": "852b198ce56e11ea8c1228565aff1764"
     },
     "952b1583236e11ea8c1228565a4f1743": {
         "fname": "Maria",
